@@ -1,5 +1,14 @@
+html body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #242424;
+  color: white;
+}
 .title {
-  margin: 10px;
+  margin: 0px;
+  padding: 0;
+  justify-self: flex-start;
 }
 
 .wrapper {
@@ -50,6 +59,11 @@ label {
   color: orange; 
   margin-top: 10px;
   align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
 }
 
 .select {
