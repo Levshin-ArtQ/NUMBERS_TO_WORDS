@@ -48,7 +48,7 @@ label {
 }
 
 .submit {
-  width: 200px;
+  /* width: 200px; */
   height: 30px;
   border-radius: 5px;
   border: 1px solid orange;
