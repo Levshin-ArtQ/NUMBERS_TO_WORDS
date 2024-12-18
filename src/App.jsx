@@ -31,7 +31,8 @@ function sumProp(nSum, sGender, sCase) {
         ["одним",  "одной", "одним"], // Творительный
         ["одном",  "одной", "одном"] // Предложный
       ];
-      // TODO: тщательно проверять винительный 
+
+
       const units = [
           ["", "-", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"], // Именительный
           ["", "-", "двух", "трех", "четырех", "пяти", "шести", "семи", "восьми", "девяти"], // Родительный
@@ -98,13 +99,6 @@ function sumProp(nSum, sGender, sCase) {
           number = 0;
       } else {
           result += getTens(Math.floor(number / 10), caseIndex) + " ";
-          // if (number >= 10 && number < 40) {
-          //   result += endings10to30[caseIndex] + " ";
-          // } else if (number >= 40 && number < 90) {
-          //   result += tens40to80[Math.floor((number) / 10)] + " ";
-          // } else if (number >= 90 && number < 100) {
-
-          // }
           number %= 10;
       }
       if (number === 1) {
@@ -156,8 +150,6 @@ function sumProp(nSum, sGender, sCase) {
       const classGender = index === 3 ? genderIndex : index === 2 ? 1 : 0; 
       console.log("caseIndex", caseIndex);
       // Если в разряде единиц стоит число больше 4 и это не 11 то в Им и Вин падежах, падеж у тысяч, миллионов, миллиардов меняется на Родительный
-      // const classCaseIndex = (num % 10 >= 5 || num%10 === 0) && num%100 === 11 && (caseIndex === 0 || caseIndex === 3) ? 1 : caseIndex;
-      // let classCaseIndex = num%100 !== 11 && num%10 > 0 && num%10 < 5 && (caseIndex !== 0 && caseIndex !== 3) ? caseIndex : 1;
       let classCaseIndex = caseIndex;
       if (caseIndex === 0 || caseIndex === 3) {
         if (num%100 === 11) {
@@ -183,7 +175,8 @@ function App() {
   const [number, setNumber] = useState(21);
   const [gender, setGender] = useState("М");
   const [caseType, setCaseType] = useState("Р");
-  const [result, setResult] = useState(sumProp(number, gender, caseType));
+  const [result, setResult] = useState("двадцати одного");
+  // const [result, setResult] = useState(sumProp(number, gender, caseType));
 
   const handleConvert = (e) => {
       try {
