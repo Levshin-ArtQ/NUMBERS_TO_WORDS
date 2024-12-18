@@ -180,10 +180,10 @@ function sumProp(nSum, sGender, sCase) {
 
 
 function App() {
-  const [number, setNumber] = useState(31);
+  const [number, setNumber] = useState(21);
   const [gender, setGender] = useState("М");
   const [caseType, setCaseType] = useState("Р");
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState(sumProp(number, gender, caseType));
 
   const handleConvert = (e) => {
       try {
